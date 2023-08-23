@@ -108,7 +108,7 @@ const updateUser = async (request, userId) => {
   if (password !== confirmPassword)
     throw new ResponseError(400, "Password And Confirm Password Not Match");
 
-  let data = {};
+  const data = {};
 
   if (role) {
     data.role = role;

@@ -144,7 +144,7 @@ const updateProduct = async (request, productId) => {
 
   if (!product) throw new ResponseError(404, "Product Not Found");
 
-  let dataUpdated = {};
+  const dataUpdated = {};
 
   if (request.category) {
     const categories = await prismaClient.category.findFirst({
