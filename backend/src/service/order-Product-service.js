@@ -178,7 +178,7 @@ const getAllOrder = async (request) => {
   const filters = [];
 
   if (year) {
-    searchTime.push({
+    filters.push({
       created_at: {
         gte: new Date(year),
         lte: new Date(Number(year) + 1, 0, 1)
@@ -186,7 +186,7 @@ const getAllOrder = async (request) => {
     });
   }
   if (month) {
-    searchTime.push({
+    filters.push({
       created_at: {
         gte: new Date(year, month - 1),
         lte: new Date(year, month, 1)
@@ -194,7 +194,7 @@ const getAllOrder = async (request) => {
     });
   }
   if (day) {
-    searchTime.push({
+    filters.push({
       created_at: {
         gte: new Date(year, month - 1, day),
         lte: new Date(year, month - 1, Number(day) + 1)

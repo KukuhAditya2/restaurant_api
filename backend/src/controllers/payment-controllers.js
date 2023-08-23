@@ -55,7 +55,7 @@ export const updatedPayment = async (req, res, next) => {
 export const deletedPayment = async (req, res, next) => {
   try {
     const paymentId = req.params.paymentId;
-    const result = await paymentService.deletedPayment(paymentId);
+    await paymentService.deletedPayment(paymentId);
     res.status(200).json({
       message: "Deleted Success"
     });
